@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "openlineage-integration-common"
-version = "1.43.0"
+version = "1.43.0-hotfix"
 description = "OpenLineage common python library for integrations"
 readme = "README.md"
 requires-python = ">=3.9"
