@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "openlineage-python"
-version = "1.43.0"
+version = "1.43.0rc1"
 description = "OpenLineage Python Client"
 readme = "README.md"
 keywords = [
