@@ -263,7 +263,11 @@ class DbtLocalArtifactProcessor(DbtArtifactProcessor):
         except FileNotFoundError:
             catalog = None
 
-        profile_dir = run_result["args"]["profiles_dir"]
+        # HOTFIX for DBT FUSION due to change in run_results.json structure
+        try:
+            profile_dir = run_result["args"]["profiles_dir"]
+        except KeyError:
+            profile_dir = "." # enforce default directory to get a FileNotFoundError
 
         try:
             profile = self.load_yaml_with_jinja(os.path.join(profile_dir, "profiles.yml"))[self.profile_name]
